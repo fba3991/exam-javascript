@@ -11,7 +11,6 @@ book.rating = 6;
 
 book.increaseRating = function(valoreIncremento) {
     this.rating += valoreIncremento;
-
 }
 book.increaseRating (Math.floor(Math.random() * 5));;
 
