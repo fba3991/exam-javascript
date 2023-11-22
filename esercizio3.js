@@ -11,8 +11,9 @@ book.rating = 6;
 
 book.increaseRating = function(valoreIncremento) {
     this.rating += valoreIncremento;
+
 }
-book.increaseRating(Math.floor(Math.random()* (4 -0 +1) +0));
+book.increaseRating (Math.floor(Math.random() * 5));;
 
 delete book.year;
 
