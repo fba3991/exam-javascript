@@ -1,7 +1,7 @@
 const stringheConLaA =(stringa)=>{
-let stingaVuota='';/* creato per poi aggiungere elemti di stringa */
+let stingaVuota='';
 for(let i=0; i<stringa.length; i++){
-    if(stringa[i][0].toUpperCase() === 'A'){/* [0] creato per indicare il primo indice della stringa */
+    if(stringa[i][0].toUpperCase() === 'A'){/
      stingaVuota +=stringa[i];
     }
     if (stingaVuota.length >10){
