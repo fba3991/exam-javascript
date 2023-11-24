@@ -1,62 +1,43 @@
 const devTeam = {
-    lead: {
-        name: "Alice",
-        skills: ["JavaScript", "React", "Node.js"]
-    },
-    testers: [
-        { name: "Bob", skills: ["HTML", "CSS", "JavaScript"] },
-        { name: "Charlie", skills: ["Python", "Django", "PostgreSQL"] }
-    ],
-    projectName: "WebApp"
+  lead: {
+    name: "Alice",
+    skills: ["JavaScript", "React", "Node.js"],
+  },
+  testers: [
+    { name: "Bob", skills: ["HTML", "CSS", "JavaScript"] },
+    { name: "Charlie", skills: ["Python", "Django", "PostgreSQL"] },
+  ],
+  projectName: "WebApp",
 };
 
-/*  
-Dentro l'oggetto devTeam, ci sono cinque oggetti in totale:
-anche gli array sono oggetti.
-*/
-
-const teamLead = devTeam.lead.skills.push("GraphQL");
+const teamLead = devTeam.lead;
+teamLead.skills.push("GraphQl");
 
 const devTeamCopy = JSON.parse(JSON.stringify(devTeam));
-devTeamCopy.projectName = 'MobileApp';
+devTeamCopy.projectName = "MobileApp";
 
+function createTester(name) {
+  const possibleSkills = [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "HTML",
+    "CSS",
+    "Python",
+    "Django",
+    "PostgreSQL",
+  ];
+  let skills = [];
 
-  
-
-function newTester(name) {
-    const nuoveSkills = ["JavaScript", "React", "Node.js", "HTML", "CSS", "Python", "Django", "PostgreSQL"];
-    const skillsCasuali = [];
-  
-    for (let i = 0; i < 3; i++) {
-      const indiceCasuale = Math.floor(Math.random() * nuoveSkills.length);
-    skillsCasuali.push( nuoveSkills [indiceCasuale]);
-    }
-  
-    return {
-      name: name,
-      skills: skillsCasuali
-    };
+  for (let i = 0; i < 3; i++) {
+    const n = Math.floor(Math.random() * 8);
+    const skill = possibleSkills[n];
+    skills.push(skill);
   }
-  
-  const tester = newTester("Nuovo Tester");
-  console.log(tester, devTeam);
-  
+  const testers = { name, skills };
+  return testers;
+}
+const newTester = createTester("Fabio");
+devTeam.testers.push(newTester);
 
-
-
-
-/* 
-oltre agli oggetti esistenti abbiamo:
-devTeamCopy: che sarebbe la copia di tutto l'oggetto devTeam.
-tester: È l'oggetto restituito dalla funzione newTester, con le proprieta name e skills.
-quindi nel totale del codice abbiamo 5 oggetti definiti, 2 due oggetti creati.
-in totale abbiamo 7 oggetti in tutto il codice.
-*/
-
-
-
-
-
-
-
-
+console.log(newTester, devTeam);
